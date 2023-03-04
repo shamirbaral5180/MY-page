@@ -1,44 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Login Form</title>
-</head>
-<body>
-  <h1>Login Form</h1>
-  <form action="process_login.php" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required><br><br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br><br>
-    <input type="submit" value="Login">
-  </form>
-
-  <button onclick="toggleSignup()">Signup</button>
-
-  <h1 id="signup-heading" style="display:none;">Signup Form</h1>
-  <form id="signup-form" action="process_signup.php" method="POST" style="display:none;">
-    <label for="new_username">Username:</label>
-    <input type="text" id="new_username" name="new_username" required><br><br>
-    <label for="new_password">Password:</label>
-    <input type="password" id="new_password" name="new_password" required><br><br>
-    <label for="confirm_password">Confirm Password:</label>
-    <input type="password" id="confirm_password" name="confirm_password" required><br><br>
-    <input type="submit" value="Signup">
-  </form>
-
-  <script>
-    function toggleSignup() {
-      var signupHeading = document.getElementById("signup-heading");
-      var signupForm = document.getElementById("signup-form");
-      if (signupHeading.style.display === "none") {
-        signupHeading.style.display = "block";
-        signupForm.style.display = "block";
-      } else {
-        signupHeading.style.display = "none";
-        signupForm.style.display = "none";
+  <head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+      /* CSS styling for the login page */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
       }
-    }
-  </script>
-</body>
+      
+      .login-box {
+        margin: 100px auto;
+        width: 300px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      
+      button[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+      
+      button[type=submit]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <h2>Login</h2>
+      <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter username">
+      
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password">
+        
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </body>
 </html>
