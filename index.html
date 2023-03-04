@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+</head>
+<body>
+  <h1>Login Form</h1>
+  <form action="process_login.php" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    <input type="submit" value="Login">
+  </form>
+
+  <button onclick="toggleSignup()">Signup</button>
+
+  <h1 id="signup-heading" style="display:none;">Signup Form</h1>
+  <form id="signup-form" action="process_signup.php" method="POST" style="display:none;">
+    <label for="new_username">Username:</label>
+    <input type="text" id="new_username" name="new_username" required><br><br>
+    <label for="new_password">Password:</label>
+    <input type="password" id="new_password" name="new_password" required><br><br>
+    <label for="confirm_password">Confirm Password:</label>
+    <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+    <input type="submit" value="Signup">
+  </form>
+
+  <script>
+    function toggleSignup() {
+      var signupHeading = document.getElementById("signup-heading");
+      var signupForm = document.getElementById("signup-form");
+      if (signupHeading.style.display === "none") {
+        signupHeading.style.display = "block";
+        signupForm.style.display = "block";
+      } else {
+        signupHeading.style.display = "none";
+        signupForm.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
