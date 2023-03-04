@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login or Sign up</title>
+</head>
+<body>
+  <h1>Login or Sign up</h1>
+  
+  <h2>Login</h2>
+  <form method="POST" action="login.php">
+    <label for="username">Username:</label>
+    <input type="text" name="username" required>
+    
+    <br>
+    
+    <label for="password">Password:</label>
+    <input type="password" name="password" required>
+    
+    <br>
+    
+    <input type="submit" value="Login">
+  </form>
+  
+  <h2>Sign up</h2>
+  <button onclick="toggleSignup()">Sign up</button>
+  <form id="signup-form" method="POST" action="signup.php" style="display: none;">
+    <label for="username">Username:</label>
+    <input type="text" name="username" required>
+    
+    <br>
+    
+    <label for="password">Password:</label>
+    <input type="password" name="password" required>
+    
+    <br>
+    
+    <input type="submit" value="Sign up">
+  </form>
+  
+  <script>
+    function toggleSignup() {
+      var signupForm = document.getElementById("signup-form");
+      if (signupForm.style.display === "none") {
+        signupForm.style.display = "block";
+      } else {
+        signupForm.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
